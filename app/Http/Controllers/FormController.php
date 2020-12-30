@@ -43,15 +43,11 @@ class FormController extends Controller
         return view('tools.form_builder.display',compact('form'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Form  $form
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Form $form)
+
+    public function edit($id)
     {
-        //
+        $form=Form::find($id);
+        return view('tools.form_builder.edit',compact('form'));
     }
 
     /**

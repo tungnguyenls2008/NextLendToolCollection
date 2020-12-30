@@ -18,12 +18,12 @@
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('form-builder')" :active="request()->routeIs('form-builder')">
-                        {{ __('Form Builder') }}
+                        {{ __('Trình dựng hồ sơ') }}
                     </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('forms')" :active="request()->routeIs('forms')">
-                        {{ __('Form List') }}
+                        {{ __('Danh sách hồ sơ') }}
                     </x-nav-link>
                 </div>
             </div>

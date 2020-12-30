@@ -33,6 +33,17 @@
                 i18n: {
                     locale: 'vi-VN'
                 },
+                defaultFields: [{
+                    className: "form-control",
+                    label: "Tiêu đề hồ sơ",
+                    placeholder: "Xin nhập tiêu đề hồ sơ",
+                    name: "form_name",
+                    required: true,
+                    type: "text",
+                    id: "form_name"
+                },
+
+                ],
                 onSave: function (e) {
                     //do save json to db here
                     var data = form_builder.actions.getData('json')
