@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Create New Form') }}
+            {{ __('Tạo hồ sơ mới') }}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -11,7 +11,7 @@
                     <div class="card">
                         <div class="card-header bg-primary text-light">
                             <div class="row">
-                                <h3 class="col-9">Create Form</h3>
+                                <h3 class="col-9">Tạo bộ hồ sơ</h3>
                                 <a href="{{ route('forms') }}" class="col-3 btn btn-primary">Quay lại</a>
                             </div>
                         </div>

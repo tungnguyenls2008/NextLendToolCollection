@@ -78,9 +78,11 @@ class FormController extends Controller
     }
     public function saveJsonFromFormBuilder(Request $request){
         $json_data=$request->json_data;
+        $formDataEdited=rtrim($json_data,']');
+        $formDataEdited.=',{"type":"button","label":"Lưu hồ sơ","subtype":"button","className":"btn-primary btn","id":"submit","name":"submit","access":false,"style":"default"}]';
         $form=new Form();
         $form->form_name=$request->form_name;
-        $form->json_data=$json_data;
+        $form->json_data=$formDataEdited;
         $form->save();
     }
 }

@@ -19,6 +19,7 @@
         jQuery(function($) {
             var container = $('#form_render');
             var formData = $('#json_data').val();
+
             var options = {
                 container: container,
                 formData: formData,
