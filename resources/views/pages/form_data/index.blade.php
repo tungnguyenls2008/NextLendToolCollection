@@ -24,7 +24,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$case['data_pack']}}</td>
                                 <td>{{$case['creator']}}</td>
-                                <td><a href="" class="btn btn-primary">Chi tiết</a>
+                                <td><a href="{{route('data_detail',['id'=>$case['_id']])}}" class="btn btn-primary">Chi tiết</a>
                                     <a href="" class="btn btn-warning">Chỉnh sửa</a>
                                 </td>
                             </tr>

@@ -11,6 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h3>{{$form['form_title']}}</h3>
                     <input value="{{$form['json_data']}}" id="json_data" hidden>
+                    <input value="{{$form['id']}}" id="form_id" hidden>
                     <form id="input_data_form" name="input_data_form">
                         <div id="form_render"></div>
                         <input value="{{substr(md5(rand()), 0, 9)}}" id="data_pack" hidden>
@@ -22,25 +23,22 @@
         </div>
     </div>
     <script>
-        jQuery(function ($) {
-            var container = $('#form_render');
-            var formData = $('#json_data').val();
 
-            var options = {
-                container: container,
-                formData: formData,
-                dataType: 'json'
-            };
-
-            container.formRender(options);
-        });
         $(document).ready(function() {
+                var container = $('#form_render');
+                var formData = $('#json_data').val();
 
+                var options = {
+                    container: container,
+                    formData: formData,
+                    dataType: 'json'
+                };
+                var formRenderInstance =container.formRender(options);
             $(document).on('click', '#submit', function (e) {
-                var input_data=$("#input_data_form").serializeArray();
+                var input_data=formRenderInstance.userData;
                 var data_pack=$("#data_pack").val();
+                var form_id = $('#form_id').val();
 
-                console.log(data_pack)
                 e.preventDefault();
                 $.ajaxSetup({
                     headers: {
@@ -51,6 +49,7 @@
                     url: "{{URL::route('save_data')}}",
                     method: 'post',
                     data: {
+                        form_id: form_id,
                         data_pack: data_pack,
                         input_data: input_data
                     },

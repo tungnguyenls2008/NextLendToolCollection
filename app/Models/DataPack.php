@@ -10,7 +10,8 @@ class DataPack extends Model
 {
     protected $connection = 'mongodb';
     protected $collection = 'data_pack';
-    protected $fillable=['data_pack','creator'];
+    protected $fillable=['data_pack','creator','form_id'];
+
     public function data(){
         return $this->hasMany(Data::class);
     }

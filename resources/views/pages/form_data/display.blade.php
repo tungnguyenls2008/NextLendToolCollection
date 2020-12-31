@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Nhập dữ liệu') }}
+            {{ __('Dữ liệu đã nhập') }}
         </h2>
     </x-slot>
 
@@ -9,31 +9,31 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h3>{{$form['form_title']}}</h3>
-                    <input value="{{$form['json_data']}}" id="json_data" hidden>
+                    <h3>something</h3>
+                    <input value="{{$data[0]['data']}}" id="json_data" hidden>
                     <form id="input_data_form" name="input_data_form">
                         <div id="form_render"></div>
-                        <input value="{{substr(md5(rand()), 0, 9)}}" id="data_pack" hidden>
-
-                        <button type="button" id="submit" name="submit" class="btn btn-primary" >Lưu dữ liệu</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
+
         jQuery(function ($) {
             var container = $('#form_render');
             var formData = $('#json_data').val();
 
             var options = {
-                render:false,
                 container: container,
                 formData: formData,
                 dataType: 'json'
             };
 
             container.formRender(options);
+        });
+        $(document).ready(function(){
+            $("#input_data_form :input").prop("disabled", true);
         });
         {{--$(document).ready(function() {--}}
 

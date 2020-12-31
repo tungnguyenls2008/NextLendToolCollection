@@ -33,23 +33,18 @@ class DataController extends Controller
      */
     public function store(Request $request)
     {
-        $input_data = $request->input_data;
-        foreach ($input_data as $data) {
-            $dataObj = new Data();
-            $dataObj->name = $data['name'];
-            $dataObj->value = $data['value'];
-            $dataObj->data_pack = $request->data_pack;
-            $dataObj->creator = $request->user()->name;
-            $dataObj->save();
-
-            $dataPackObj = new DataPack();
-            $dataPackObj->data_pack = $request->data_pack;
-            $dataPackObj->creator = $request->user()->name;
-            $dataPackObj->updateOrCreate(['data_pack' => $request->data_pack],
-                ['data_pack' => $request->data_pack,
-                    'creator' => $request->user()->name]);
-
-        }
+        $input_data = json_encode($request->input_data,JSON_UNESCAPED_UNICODE);
+        $dataObj = new Data();
+        $dataObj->data = $input_data;
+        $dataObj->form_id = $request->form_id;
+        $dataObj->data_pack = $request->data_pack;
+        $dataObj->creator = $request->user()->name;
+        $dataObj->save();
+        $dataPackObj = new DataPack();
+        $dataPackObj->updateOrCreate(['data_pack' => $request->data_pack],
+            ['data_pack' => $request->data_pack,
+                'creator' => $request->user()->name,
+                'form_id' => $request->form_id]);
     }
 
     /**

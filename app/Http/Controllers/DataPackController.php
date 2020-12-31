@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Data;
 use App\Models\DataPack;
+use App\Models\Form;
 use Illuminate\Http\Request;
 
 class DataPackController extends Controller
@@ -35,15 +37,11 @@ class DataPackController extends Controller
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\DataPack  $dataPack
-     * @return \Illuminate\Http\Response
-     */
-    public function show(DataPack $dataPack)
+    public function show($id)
     {
-        //
+        $data_pack = DataPack::find($id)->data_pack;
+        $data=Data::where('data_pack',$data_pack)->get()->toArray();
+        return view('pages.form_data.display', compact('data'));
     }
 
     /**

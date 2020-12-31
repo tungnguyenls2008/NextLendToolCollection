@@ -31,7 +31,8 @@ Route::get('/new-data/{id}', [FormController::class, 'show'])->middleware(['auth
 Route::any('/form-edit/{id}', [FormController::class, 'edit'])->middleware(['auth'])->name('form_edit');
 Route::post('/save_form', [FormController::class, 'store'])->middleware(['auth'])->name('save_form');
 Route::post('/save_edited_form', [FormController::class, 'saveEditedJsonFromFormBuilder'])->middleware(['auth'])->name('save_edited_form');
-Route::post('/save_data', [DataController::class, 'store'])->middleware(['auth'])->name('save_data');
+Route::any('/save_data', [DataController::class, 'store'])->middleware(['auth'])->name('save_data');
 Route::get('/data', [DataPackController::class, 'index'])->middleware(['auth'])->name('data');
+Route::get('/data-detail/{id}', [DataPackController::class, 'show'])->middleware(['auth'])->name('data_detail');
 
 require __DIR__ . '/auth.php';
