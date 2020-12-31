@@ -14,7 +14,8 @@
                         <tr>
                             <th>STT</th>
                             <th>Tên hồ sơ</th>
-                            <th>Số lượng dữ liệu cần nhập</th>
+                            <th>Phiên bản</th>
+                            <th>Người tạo</th>
                             <th>Thao tác</th>
                         </tr>
                         </thead>
@@ -23,7 +24,8 @@
                             <tr>
                                 <td>{{$key}}</td>
                                 <td>{{$form['form_name']}}</td>
-                                <td>10</td>
+                                <td>{{$form['version']}}</td>
+                                <td>{{$form['creator']}}</td>
                                 <td><a href="{{route('new_data',['id'=>$form['id']])}}" class="btn btn-primary">Nhập dữ liệu mới</a>
                                     <a href="{{route('form_edit',['id'=>$form['id']])}}" class="btn btn-warning">Chỉnh sửa</a>
                                 </td>

@@ -17,6 +17,8 @@ class CreateFormsTable extends Migration
             $table->id();
             $table->string('form_name');
             $table->longText('json_data');
+            $table->string('creator');
+            $table->integer('version');
             $table->timestamps();
         });
     }

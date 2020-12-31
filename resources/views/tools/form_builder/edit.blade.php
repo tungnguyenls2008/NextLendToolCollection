@@ -17,9 +17,13 @@
                         </div>
                         <div class="card-body">
                             <div>
-                                <label for="form_name">Tên loại hồ sơ: </label><input type="text" id="form_name" required value="{{$form['form_name']}}">
+                                <h3>Tiêu đề hồ sơ: {{$form['form_name']}}</h3>
                             </div>
                             <div id="form_builder"></div>
+                        </div>
+                        <div><input id="form_data" value="{{$form['json_data']}}" hidden>
+                            <input id="form_id" value="{{$form['id']}}" hidden>
+                            <input id="form_name" value="{{$form['form_name']}}" hidden>
                         </div>
                     </div>
                 </div>
@@ -29,26 +33,19 @@
     <script>
 
         jQuery(function ($) {
+            var edit_data=$("#form_data").val()
+            edit_data=JSON.parse(edit_data);
             var options = {
                 i18n: {
                     locale: 'vi-VN'
                 },
-                defaultFields: [{
-                    //todo: edit this field to take stored form data as value to edit, you're getting there
-                    className: "form-control",
-                    label: "Tiêu đề hồ sơ",
-                    placeholder: "Xin nhập tiêu đề hồ sơ",
-                    name: "form_name",
-                    required: true,
-                    type: "text",
-                    id: "form_name"
-                },
-
-                ],
+                defaultFields: edit_data ,
                 onSave: function (e) {
                     //do save json to db here
                     var data = form_builder.actions.getData('json')
-                    var form_name=$('#form_name').val();
+                    var form_name=$("#form_name").val();
+                    var form_id=$("#form_id").val();
+                    console.log(form_name)
                     //alert(data)
                     e.preventDefault();
                     $.ajaxSetup({
@@ -57,14 +54,15 @@
                         }
                     });
                     jQuery.ajax({
-                        url: "{{URL::route('save_form')}}",
+                        url: "{{URL::route('save_edited_form')}}",
                         method: 'post',
                         data: {
+                            form_id: form_id,
                             form_name: form_name,
                             json_data: data
                         },
                         success: function (result) {
-                            alert('Lưu hồ sơ thành công!');
+                            alert('Chỉnh sửa hồ sơ thành công!');
 
                         }
                     });

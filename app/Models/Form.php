@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Form extends Model
 {
     use HasFactory;
-    protected $fillable=['json_data','form_name'];
+    protected $fillable=['json_data','form_name','creator','version'];
 }

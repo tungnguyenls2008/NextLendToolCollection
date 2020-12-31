@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Form;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use function GuzzleHttp\Promise\all;
 
 class FormController extends Controller
@@ -33,7 +35,15 @@ class FormController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $json_data=$request->json_data;
+        $formDataEdited=rtrim($json_data,']');
+        $formDataEdited.=',{"type":"button","label":"Lưu hồ sơ","subtype":"button","className":"btn-primary btn","id":"submit","name":"submit","access":false,"style":"default"}]';
+        $form=new Form();
+        $form->form_name=$request->form_name;
+        $form->json_data=$formDataEdited;
+        $form->creator=$request->user()->name;
+        $form->version=1;
+        $form->save();
     }
 
 
@@ -72,13 +82,17 @@ class FormController extends Controller
     {
         //
     }
-    public function saveJsonFromFormBuilder(Request $request){
+    public function saveEditedJsonFromFormBuilder(Request $request){
+        $form_to_edit=Form::find($request->form_id);
+        $version=$form_to_edit->version;
         $json_data=$request->json_data;
         $formDataEdited=rtrim($json_data,']');
         $formDataEdited.=',{"type":"button","label":"Lưu hồ sơ","subtype":"button","className":"btn-primary btn","id":"submit","name":"submit","access":false,"style":"default"}]';
         $form=new Form();
         $form->form_name=$request->form_name;
         $form->json_data=$formDataEdited;
+        $form->creator=$request->user()->name;
+        $form->version=$version+1;
         $form->save();
     }
 }

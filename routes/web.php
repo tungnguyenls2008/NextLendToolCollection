@@ -27,6 +27,7 @@ Route::get('/form-builder', function () {
 Route::get('/forms', [FormController::class, 'index'])->middleware(['auth'])->name('forms');
 Route::get('/new-data/{id}', [FormController::class, 'show'])->middleware(['auth'])->name('new_data');
 Route::any('/form-edit/{id}', [FormController::class, 'edit'])->middleware(['auth'])->name('form_edit');
-Route::post('/save_form', [FormController::class, 'saveJsonFromFormBuilder'])->middleware(['auth'])->name('save_form');
+Route::post('/save_form', [FormController::class, 'store'])->middleware(['auth'])->name('save_form');
+Route::post('/save_edited_form', [FormController::class, 'saveEditedJsonFromFormBuilder'])->middleware(['auth'])->name('save_edited_form');
 
 require __DIR__ . '/auth.php';
