@@ -9,27 +9,52 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    <h3>{{$form['form_title']}}</h3>
                     <input value="{{$form['json_data']}}" id="json_data" hidden>
-                <div id="form_render"></div>
+                    <form id="input_data_form" name="input_data_form">
+                        <div id="form_render"></div>
+                        <button type="button" id="submit" name="submit" class="btn btn-primary" >Lưu dữ liệu</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
     <script>
-        jQuery(function($) {
+        jQuery(function ($) {
             var container = $('#form_render');
             var formData = $('#json_data').val();
 
             var options = {
                 container: container,
                 formData: formData,
-                i18n: {
-                    locale: 'vi-VN'
-                },
                 dataType: 'json'
             };
 
             container.formRender(options);
+        });
+        $(document).ready(function() {
+
+            $(document).on('click', '#submit', function (e) {
+                var input_data=$("#input_data_form").serialize();
+                console.log(input_data)
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                jQuery.ajax({
+                    url: "{{URL::route('save_data')}}",
+                    method: 'post',
+                    data: {
+                        input_data: input_data
+                    },
+                    success: function (result) {
+                        console.log('Lưu hồ sơ thành công!');
+
+                    }
+                })
+            });
         });
     </script>
 </x-app-layout>

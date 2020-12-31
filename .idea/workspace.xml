@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e93e22-8a30-4469-b6f2-1f44b7be0384" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DataController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Data.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/DataFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/DataSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NextLendToolCollection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NextLendToolCollection.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_30_063729_create_forms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_30_063729_create_forms_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/display.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/display.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
@@ -141,21 +152,27 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
+      <path value="$PROJECT_DIR$/vendor/mongodb/mongodb" />
+      <path value="$PROJECT_DIR$/vendor/jean85/pretty-package-versions" />
+      <path value="$PROJECT_DIR$/vendor/jenssegers/mongodb" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mMh5ZD9orvF7PvA6GMpA0qXcK9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/database/seeders" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vaymuon4" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -186,7 +203,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609309185129</updated>
       <workItem from="1609309186385" duration="15145000" />
-      <workItem from="1609378360397" duration="3367000" />
+      <workItem from="1609378360397" duration="9014000" />
     </task>
     <servers />
   </component>
@@ -204,5 +221,8 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataController;
 use App\Http\Controllers\FormController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,5 +30,6 @@ Route::get('/new-data/{id}', [FormController::class, 'show'])->middleware(['auth
 Route::any('/form-edit/{id}', [FormController::class, 'edit'])->middleware(['auth'])->name('form_edit');
 Route::post('/save_form', [FormController::class, 'store'])->middleware(['auth'])->name('save_form');
 Route::post('/save_edited_form', [FormController::class, 'saveEditedJsonFromFormBuilder'])->middleware(['auth'])->name('save_edited_form');
+Route::post('/save_data', [DataController::class, 'store'])->middleware(['auth'])->name('save_data');
 
 require __DIR__ . '/auth.php';

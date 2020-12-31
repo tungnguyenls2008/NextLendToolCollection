@@ -17,7 +17,7 @@
                         </div>
                         <div class="card-body">
                             <div>
-                                <label for="form_name">Tên loại hồ sơ: </label><input type="text" id="form_name" required>
+                                <label for="form_title">Tiêu đề hồ sơ: </label><input type="text" id="form_title" required>
                             </div>
                             <div id="form_builder"></div>
                         </div>
@@ -33,21 +33,10 @@
                 i18n: {
                     locale: 'vi-VN'
                 },
-                defaultFields: [{
-                    className: "form-control",
-                    label: "Tiêu đề hồ sơ",
-                    placeholder: "Xin nhập tiêu đề hồ sơ",
-                    name: "form_name",
-                    required: true,
-                    type: "text",
-                    id: "form_name"
-                },
-
-                ],
                 onSave: function (e) {
                     //do save json to db here
                     var data = form_builder.actions.getData('json')
-                    var form_name=$('#form_name').val();
+                    var form_title=$('#form_title').val();
                     //alert(data)
                     e.preventDefault();
                     $.ajaxSetup({
@@ -59,7 +48,7 @@
                         url: "{{URL::route('save_form')}}",
                         method: 'post',
                         data: {
-                            form_name: form_name,
+                            form_title: form_title,
                             json_data: data
                         },
                         success: function (result) {

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Chỉnh sửa hồ sơ: ') }}{{$form['form_name']}}
+            {{ __('Chỉnh sửa hồ sơ: ') }}{{$form['form_title']}}
         </h2>
     </x-slot>
     <div class="py-12">
@@ -17,13 +17,13 @@
                         </div>
                         <div class="card-body">
                             <div>
-                                <h3>Tiêu đề hồ sơ: {{$form['form_name']}}</h3>
+                                <h3>Tiêu đề hồ sơ: {{$form['form_title']}}</h3>
                             </div>
                             <div id="form_builder"></div>
                         </div>
                         <div><input id="form_data" value="{{$form['json_data']}}" hidden>
                             <input id="form_id" value="{{$form['id']}}" hidden>
-                            <input id="form_name" value="{{$form['form_name']}}" hidden>
+                            <input id="form_title" value="{{$form['form_title']}}" hidden>
                         </div>
                     </div>
                 </div>
@@ -34,6 +34,7 @@
 
         jQuery(function ($) {
             var edit_data=$("#form_data").val()
+
             edit_data=JSON.parse(edit_data);
             var options = {
                 i18n: {
@@ -43,9 +44,8 @@
                 onSave: function (e) {
                     //do save json to db here
                     var data = form_builder.actions.getData('json')
-                    var form_name=$("#form_name").val();
+                    var form_title=$("#form_title").val();
                     var form_id=$("#form_id").val();
-                    console.log(form_name)
                     //alert(data)
                     e.preventDefault();
                     $.ajaxSetup({
@@ -58,7 +58,7 @@
                         method: 'post',
                         data: {
                             form_id: form_id,
-                            form_name: form_name,
+                            form_title: form_title,
                             json_data: data
                         },
                         success: function (result) {
