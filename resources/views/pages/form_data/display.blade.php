@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h3>something</h3>
+                    <h3>{{$data[0]['data_pack']}} - need more specific data</h3>
                     <input value="{{$data[0]['data']}}" id="json_data" hidden>
                     <form id="input_data_form" name="input_data_form">
                         <div id="form_render"></div>

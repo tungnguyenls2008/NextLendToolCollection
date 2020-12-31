@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e93e22-8a30-4469-b6f2-1f44b7be0384" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataPackController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataPackController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/DataPack.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/DataPack.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/form_data/display.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/form_data/display.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/form_data/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/form_data/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/display.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/display.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609309185129</updated>
       <workItem from="1609309186385" duration="15145000" />
-      <workItem from="1609378360397" duration="25370000" />
+      <workItem from="1609378360397" duration="25778000" />
     </task>
     <servers />
   </component>
