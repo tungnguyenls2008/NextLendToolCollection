@@ -9,5 +9,8 @@ class Data extends Model
 {
     protected $connection = 'mongodb';
     protected $collection = 'form_data';
-    protected $fillable=['form_id','form_title'];
+    public function dataPack()
+    {
+        return $this->belongsTo(DataPack::class);
+    }
 }

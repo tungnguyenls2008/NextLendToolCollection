@@ -27,6 +27,7 @@
             var formData = $('#json_data').val();
 
             var options = {
+                render:false,
                 container: container,
                 formData: formData,
                 dataType: 'json'
@@ -34,32 +35,32 @@
 
             container.formRender(options);
         });
-        $(document).ready(function() {
+        {{--$(document).ready(function() {--}}
 
-            $(document).on('click', '#submit', function (e) {
-                var input_data=$("#input_data_form").serializeArray();
-                var data_pack=$("#data_pack").val();
+        {{--    $(document).on('click', '#submit', function (e) {--}}
+        {{--        var input_data=$("#input_data_form").serializeArray();--}}
+        {{--        var data_pack=$("#data_pack").val();--}}
 
-                console.log(data_pack)
-                e.preventDefault();
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                jQuery.ajax({
-                    url: "{{URL::route('save_data')}}",
-                    method: 'post',
-                    data: {
-                        data_pack: data_pack,
-                        input_data: input_data
-                    },
-                    success: function (result) {
-                        console.log('Lưu hồ sơ thành công!');
+        {{--        console.log(data_pack)--}}
+        {{--        e.preventDefault();--}}
+        {{--        $.ajaxSetup({--}}
+        {{--            headers: {--}}
+        {{--                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+        {{--            }--}}
+        {{--        });--}}
+        {{--        jQuery.ajax({--}}
+        {{--            url: "{{URL::route('save_data')}}",--}}
+        {{--            method: 'post',--}}
+        {{--            data: {--}}
+        {{--                data_pack: data_pack,--}}
+        {{--                input_data: input_data--}}
+        {{--            },--}}
+        {{--            success: function (result) {--}}
+        {{--                console.log('Lưu hồ sơ thành công!');--}}
 
-                    }
-                })
-            });
-        });
+        {{--            }--}}
+        {{--        })--}}
+        {{--    });--}}
+        {{--});--}}
     </script>
 </x-app-layout>

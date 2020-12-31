@@ -83,14 +83,17 @@ class FormController extends Controller
 
     public function saveEditedJsonFromFormBuilder(Request $request)
     {
-        $form_to_edit = Form::find($request->form_id);
-        $version = $form_to_edit->version;
+        $query=Form::query();
+        $latest_version=$query->where('form_title',$request->form_title)->max('version');
         $json_data = $request->json_data;
         $form = new Form();
         $form->form_title = $request->form_title;
         $form->json_data = $json_data;
         $form->creator = $request->user()->name;
-        $form->version = $version + 1;
+        $form->version = $latest_version + 1;
         $form->save();
+    }
+    public function duplicate($id){
+
     }
 }

@@ -2,24 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e93e22-8a30-4469-b6f2-1f44b7be0384" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DataController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Data.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/DataFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeders/DataSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/NextLendToolCollection.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NextLendToolCollection.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/DataPackController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/DataPack.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/DataPackFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_31_064044_create_data_packs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/DataPackSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/form_data/display.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/form_data/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DataController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DataController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_30_063729_create_forms_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_30_063729_create_forms_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Data.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Data.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/display.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/display.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -172,13 +167,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vaymuon4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/form_data" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/pages/form_data" />
       <recent name="$PROJECT_DIR$/database/seeders" />
       <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/public" />
@@ -203,7 +199,7 @@
       <option name="presentableId" value="Default" />
       <updated>1609309185129</updated>
       <workItem from="1609309186385" duration="15145000" />
-      <workItem from="1609378360397" duration="9014000" />
+      <workItem from="1609378360397" duration="18865000" />
     </task>
     <servers />
   </component>
