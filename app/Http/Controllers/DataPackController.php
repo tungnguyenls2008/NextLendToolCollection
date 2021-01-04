@@ -48,11 +48,10 @@ class DataPackController extends Controller
             if (isset($item->point)){
                 $total_point+=($item->point);
             }
-        }
-        foreach ($data_decode as $item){
             if (isset($item->point) && (isset($item->userData) && $item->userData!=[null])){
                 $point+=($item->point);
             }
+
         }
         return view('pages.form_data.display', compact('data','point','total_point'));
     }

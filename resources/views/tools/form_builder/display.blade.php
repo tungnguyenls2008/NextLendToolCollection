@@ -10,12 +10,12 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h3>{{$form['form_title']}}</h3>
-                    <input value="{{$form['json_data']}}" id="json_data" hidden>
-                    <input value="{{$form['id']}}" id="form_id" hidden>
-                    <form id="input_data_form" name="input_data_form">
-                        <div id="form_render"></div>
-                        <input value="{{substr(md5(rand()), 0, 9)}}" id="data_pack" hidden>
 
+                    <form id="input_data_form" name="input_data_form" enctype="multipart/form-data">
+                        <div id="form_render"></div>
+                        <input value="{{$form['json_data']}}" id="json_data" hidden>
+                        <input value="{{$form['id']}}" id="form_id" hidden>
+                        <input value="{{substr(md5(rand()), 0, 9)}}" id="data_pack" hidden>
                         <button type="button" id="submit" name="submit" class="btn btn-primary" >Lưu dữ liệu</button>
                     </form>
                 </div>
@@ -34,6 +34,7 @@
                     dataType: 'json'
                 };
                 var formRenderInstance =container.formRender(options);
+                //todo: the submit button should not trigger ajax call, do regular form submit instead.
             $(document).on('click', '#submit', function (e) {
                 var input_data=formRenderInstance.userData;
                 var data_pack=$("#data_pack").val();
@@ -48,10 +49,11 @@
                 jQuery.ajax({
                     url: "{{URL::route('save_data')}}",
                     method: 'post',
+                    enctype: 'multipart/form-data',
                     data: {
                         form_id: form_id,
                         data_pack: data_pack,
-                        input_data: input_data
+                        input_data: input_data,
                     },
                     success: function (result) {
                         console.log('Lưu hồ sơ thành công!');

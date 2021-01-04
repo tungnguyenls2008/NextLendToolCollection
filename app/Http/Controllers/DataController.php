@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Data;
 use App\Models\DataPack;
+use App\Models\Form;
+use App\Models\Upload;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -45,6 +47,29 @@ class DataController extends Controller
             ['data_pack' => $request->data_pack,
                 'creator' => $request->user()->name,
                 'form_id' => $request->form_id]);
+
+        //file upload
+        $data=Form::find($request->form_id)->toArray();
+        $data_decode=json_decode($data['json_data']);
+        $upload= new Upload();
+        foreach ($data_decode as $key=>$item){
+            if ($item->type=='file'){
+                if ($request->hasFile($item->name)){
+                    dump($item->name);
+                    foreach($request->file($item->name) as $file)
+                    {
+                        $name = time().rand(1,100).'.'.$file->extension();
+                        $file->move(public_path('uploads'), $name);
+                        $files[] = $name;
+                        $upload->filename=$name;
+                        $upload->extension=$file->extension();
+                        $upload->filepath=public_path('uploads'). $name;
+                    }
+                    dump('done!');
+                }
+
+            }
+        }
     }
 
     /**

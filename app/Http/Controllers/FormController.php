@@ -42,12 +42,16 @@ class FormController extends Controller
         $form->creator = $request->user()->name;
         $form->version = 1;
         $form->save();
+
+
+
     }
 
 
     public function show($id)
     {
         $form = Form::find($id);
+
         return view('tools.form_builder.display', compact('form'));
     }
 
