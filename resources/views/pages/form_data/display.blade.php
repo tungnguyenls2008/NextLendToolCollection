@@ -10,6 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <h3>{{$data[0]['data_pack']}} - need more specific data</h3>
+                    <h4>Tổng điểm xếp hạng hồ sơ: <a style="color: darkgreen">{{$total_point}}</a></h4>
+                    <h4>Số điểm đạt được: <a style="color: red">{{$point}}</a></h4>
                     <input value="{{$data[0]['data']}}" id="json_data" hidden>
                     <form id="input_data_form" name="input_data_form">
                         <div id="form_render"></div>
@@ -25,6 +27,7 @@
             var formData = $('#json_data').val();
 
             var options = {
+
                 container: container,
                 formData: formData,
                 dataType: 'json'

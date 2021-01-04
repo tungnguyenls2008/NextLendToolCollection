@@ -41,7 +41,20 @@ class DataPackController extends Controller
     {
         $data_pack = DataPack::find($id)->data_pack;
         $data=Data::where('data_pack',$data_pack)->get()->toArray();
-        return view('pages.form_data.display', compact('data'));
+        $data_decode=json_decode($data[0]['data']);
+        $total_point=0;
+        $point=0;
+        foreach ($data_decode as $item){
+            if (isset($item->point)){
+                $total_point+=($item->point);
+            }
+        }
+        foreach ($data_decode as $item){
+            if (isset($item->point) && (isset($item->userData) && $item->userData!=[null])){
+                $point+=($item->point);
+            }
+        }
+        return view('pages.form_data.display', compact('data','point','total_point'));
     }
 
     /**
