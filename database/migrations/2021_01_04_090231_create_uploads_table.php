@@ -16,7 +16,6 @@ class CreateUploadsTable extends Migration
         Schema::create('uploads', function (Blueprint $table) {
             $table->id();
             $table->string('filename');
-            $table->string('extension');
             $table->string('filepath');
             $table->timestamps();
         });

@@ -27,49 +27,38 @@ class DataController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        $input_data = json_encode($request->input_data,JSON_UNESCAPED_UNICODE);
+        $input_data = $_POST['user_data'];
         $dataObj = new Data();
         $dataObj->data = $input_data;
-        $dataObj->form_id = $request->form_id;
-        $dataObj->data_pack = $request->data_pack;
+        $dataObj->form_id = $_POST['form_id'];
+        $dataObj->data_pack = $_POST['data_pack'];
         $dataObj->creator = $request->user()->name;
         $dataObj->save();
         $dataPackObj = new DataPack();
-        $dataPackObj->updateOrCreate(['data_pack' => $request->data_pack],
-            ['data_pack' => $request->data_pack,
+        $dataPackObj->updateOrCreate(['data_pack' => $_POST['data_pack']],
+            ['data_pack' => $_POST['data_pack'],
                 'creator' => $request->user()->name,
-                'form_id' => $request->form_id]);
-
+                'form_id' => $_POST['form_id']]);
         //file upload
-        $data=Form::find($request->form_id)->toArray();
-        $data_decode=json_decode($data['json_data']);
-        $upload= new Upload();
-        foreach ($data_decode as $key=>$item){
-            if ($item->type=='file'){
-                if ($request->hasFile($item->name)){
-                    dump($item->name);
-                    foreach($request->file($item->name) as $file)
-                    {
-                        $name = time().rand(1,100).'.'.$file->extension();
-                        $file->move(public_path('uploads'), $name);
-                        $files[] = $name;
-                        $upload->filename=$name;
-                        $upload->extension=$file->extension();
-                        $upload->filepath=public_path('uploads'). $name;
-                    }
-                    dump('done!');
-                }
+        $data = Form::find($_POST['form_id'])->toArray();
+        $data_decode = json_decode($data['json_data']);
+
+        foreach ($data_decode as $key => $item) {
+            if (isset($item->name) && $request->hasFile($item->name)) {
+                $file = $request->file($item->name);
+                $name = time() . rand(1, 100) . '.' . $file->extension();
+                $file->move(public_path('uploads'), $name);
+                $upload = new Upload();
+                $upload->filename = $name;
+                $upload->filepath = public_path('uploads') . $name;
+                $upload->save();
 
             }
         }
+        return back()->with('success', 'Data Your files has been successfully added');
     }
 
     /**
