@@ -13,6 +13,8 @@
                     <h4>Tổng điểm xếp hạng hồ sơ: <a style="color: darkgreen">{{$total_point}}</a></h4>
                     <h4>Số điểm đạt được: <a style="color: red">{{$point}}</a></h4>
                     <input value="{{$data[0]['data']}}" id="json_data" hidden>
+                    <input value="{{implode(',',$html_elements)}}" id="html_elements" hidden>
+                    <input value="{{implode(',',$image_exist)}}" id="image_exist" hidden>
                     <form id="input_data_form" name="input_data_form">
                         <div id="form_render"></div>
                     </form>
@@ -27,16 +29,35 @@
             var formData = $('#json_data').val();
 
             var options = {
-
+                //render: false,
                 container: container,
                 formData: formData,
                 dataType: 'json'
             };
 
             container.formRender(options);
-        });
+            //const markup = $("<div/>");
+            //markup.formRender({ formData });
+            //var html=markup.html();
+
+            })
+
         $(document).ready(function(){
             $("#input_data_form :input").prop("disabled", true);
+            var elements=$("#html_elements").val();
+            var image_exist=$("#image_exist").val();
+            console.log(elements)
+            console.log(image_exist)
+
+            elements=elements.split(',');
+            elements.forEach(function (e){
+                $('#form_render').find('input:file').each(function(i) {
+                    if ($(this).attr('name')==e){
+                        $("<img />").attr( 'src','{{asset('uploads/160981883755.jpg')}}').attr('style','width:200px').insertBefore(this);
+                        $(this).remove();
+                    }
+                })
+            })
         });
         {{--$(document).ready(function() {--}}
 

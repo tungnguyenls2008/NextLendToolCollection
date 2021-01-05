@@ -42,7 +42,7 @@
                 input_data=JSON.stringify(input_data);
                 $("#user_data").val(input_data);
             });
-            //todo: the submit button should not trigger ajax call, do regular form submit instead.
+            //done: the submit button should not trigger ajax call, do regular form submit instead.
             {{--$(document).on('click', '#submit', function (e) {--}}
             {{--    var input_data=formRenderInstance.userData;--}}
             {{--    var data_pack=$("#data_pack").val();--}}

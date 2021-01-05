@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Data;
 use App\Models\DataPack;
 use App\Models\Form;
+use App\Models\Upload;
 use Illuminate\Http\Request;
 
 class DataPackController extends Controller
@@ -44,6 +45,8 @@ class DataPackController extends Controller
         $data_decode=json_decode($data[0]['data']);
         $total_point=0;
         $point=0;
+        $html_elements=[];
+        $image_exist=[];
         foreach ($data_decode as $item){
             if (isset($item->point)){
                 $total_point+=($item->point);
@@ -51,9 +54,17 @@ class DataPackController extends Controller
             if (isset($item->point) && (isset($item->userData) && $item->userData!=[null])){
                 $point+=($item->point);
             }
-
+            if (isset($item->name)&& strpos($item->name,'file-')!==false){
+                $upload=new Upload();
+                $matched=$upload->where('html_element',$item->name)->get()->toArray();
+                $file_path=$upload->where('html_element',$item->name)->pluck('filepath');
+                if ($matched!==[] && $file_path!==[]){
+                    array_push($html_elements,$item->name);
+                    array_push($image_exist,$file_path);
+                }
+            }
         }
-        return view('pages.form_data.display', compact('data','point','total_point'));
+        return view('pages.form_data.display', compact('data','point','total_point','html_elements','image_exist'));
     }
 
     /**

@@ -34,5 +34,7 @@ Route::post('/save_edited_form', [FormController::class, 'saveEditedJsonFromForm
 Route::any('/save_data', [DataController::class, 'store'])->middleware(['auth'])->name('save_data');
 Route::get('/data', [DataPackController::class, 'index'])->middleware(['auth'])->name('data');
 Route::get('/data-detail/{id}', [DataPackController::class, 'show'])->middleware(['auth'])->name('data_detail');
-
+Route::any('/image_display/{id}',function ($id){
+    return asset('uploads/'.$id);
+})->name('image_display');
 require __DIR__ . '/auth.php';

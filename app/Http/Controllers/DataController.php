@@ -50,11 +50,16 @@ class DataController extends Controller
             if (isset($item->name) && $request->hasFile($item->name)) {
                 $file = $request->file($item->name);
                 $name = time() . rand(1, 100) . '.' . $file->extension();
-                $file->move(public_path('uploads'), $name);
                 $upload = new Upload();
                 $upload->filename = $name;
-                $upload->filepath = public_path('uploads') . $name;
+                $upload->extension = $file->extension();
+                $upload->filepath = ('uploads/') . $name;
+                $upload->form_id = $_POST['form_id'];
+                $upload->html_element = $item->name;
+                $upload->data_pack = $_POST['data_pack'];
                 $upload->save();
+                $file->move(public_path('uploads'), $name);
+
 
             }
         }
