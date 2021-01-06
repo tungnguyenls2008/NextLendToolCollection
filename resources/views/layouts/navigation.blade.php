@@ -26,11 +26,11 @@
                         {{ __('Danh sách hồ sơ') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('data')" :active="request()->routeIs('data')">
-                        {{ __('Danh sách dữ liệu') }}
-                    </x-nav-link>
-                </div>
+{{--                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">--}}
+{{--                    <x-nav-link :href="route('data')" :active="request()->routeIs('data')">--}}
+{{--                        {{ __('Danh sách dữ liệu') }}--}}
+{{--                    </x-nav-link>--}}
+{{--                </div>--}}
                 <div class="hidden sm:flex sm:items-center sm:ml-6">
                     <x-dropdown >
                         <x-slot name="trigger">

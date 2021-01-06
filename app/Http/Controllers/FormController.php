@@ -30,24 +30,25 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $json_data = $request->json_data;
-        $json_data=json_decode($json_data);
-        foreach ($json_data as $data){
-            if (isset($data->values)){
-                $value_reformat=[];
-                foreach ($data->values as $value){
-                    $edited_value=(get_object_vars($value));
-                    $edited_value=$this->changeKey($edited_value,'label',$edited_value['value']);
+        $json_data = json_decode($json_data);
+        foreach ($json_data as $data) {
+            if (isset($data->values)) {
+                $value_reformat = [];
+                foreach ($data->values as $value) {
+                    $edited_value = (get_object_vars($value));
+                    $edited_value = $this->changeKey($edited_value, 'label', $edited_value['value']);
                     unset($edited_value['value']);
                     unset($edited_value['selected']);
-                    array_push($value_reformat,$edited_value);
+                    array_push($value_reformat, $edited_value);
                 }
-                $data->values=$value_reformat;
+                $data->values = $value_reformat;
             }
         }
-        $array_form_info=["title"=>$request->form_title,"form"=>$json_data];
-        $json_form_info=json_encode($array_form_info,JSON_UNESCAPED_UNICODE);
+        $array_form_info = ["title" => $request->form_title, "form" => $json_data];
+        $json_form_info = json_encode($array_form_info, JSON_UNESCAPED_UNICODE);
         $form = new Form();
         $form->form_title = $request->form_title;
+        $form->json_data = json_encode($json_data);
         $form->json_form_info = $json_form_info;
         $form->creator = $request->user()->name;
         $form->version = 1;
@@ -95,46 +96,61 @@ class FormController extends Controller
 
     public function saveEditedJsonFromFormBuilder(Request $request)
     {
-        $query=Form::query();
-        $latest_version=$query->where('form_title',$request->form_title)->max('version');
+        $query = Form::query();
+        $latest_version = $query->where('form_title', $request->form_title)->max('version');
         $json_data = $request->json_data;
+        $json_data = json_decode($json_data);
+        foreach ($json_data as $data) {
+            if (isset($data->values)) {
+                $value_reformat = [];
+                foreach ($data->values as $value) {
+                    $edited_value = (get_object_vars($value));
+                    $edited_value = $this->changeKey($edited_value, 'label', $edited_value['value']);
+                    unset($edited_value['value']);
+                    unset($edited_value['selected']);
+                    array_push($value_reformat, $edited_value);
+                }
+                $data->values = $value_reformat;
+            }
+        }
+        $array_form_info = ["title" => $request->form_title, "form" => $json_data];
+        $json_form_info = json_encode($array_form_info, JSON_UNESCAPED_UNICODE);
         $form = new Form();
         $form->form_title = $request->form_title;
-        $form->json_data = $json_data;
+        $form->json_data = json_encode($json_data);
+        $form->json_form_info = $json_form_info;
         $form->creator = $request->user()->name;
         $form->version = $latest_version + 1;
         $form->save();
     }
-    public function duplicate($id){
+
+    public function duplicate($id)
+    {
 
     }
-    private function changeKey( $array, $old_key, $new_key ) {
 
-        if( ! array_key_exists( $old_key, $array ) )
+    private function changeKey($array, $old_key, $new_key)
+    {
+
+        if (!array_key_exists($old_key, $array))
             return $array;
 
-        $keys = array_keys( $array );
-        $keys[ array_search( $old_key, $keys ) ] = $new_key;
+        $keys = array_keys($array);
+        $keys[array_search($old_key, $keys)] = $new_key;
 
-        return array_combine( $keys, $array );
+        return array_combine($keys, $array);
     }
-    private function key_implode(&$array, $glue) {
-        $result = "";
-        foreach ($array as $key => $value) {
-            $result .= $key . ":" . $value . $glue;
-        }
-        return substr($result, (-1 * strlen($glue)));
-    }
-    protected function join_form(Request $request){
-        $form_id_array=$request->selected_form_id;
-        $joined_form=[];
-        foreach ($form_id_array as $form_id){
-            $form=Form::find($form_id);
-            $form_data=json_decode($form->json_form_info);
-            array_push($joined_form,$form_data);
 
+    protected function join_form(Request $request)
+    {
+        $form_id_array = $request->selected_form_id;
+        $joined_form = [];
+        foreach ($form_id_array as $form_id) {
+            $form = Form::find($form_id);
+            $form_data = json_decode($form->json_form_info);
+            array_push($joined_form, $form_data);
         }
-        dd(json_encode($joined_form,JSON_UNESCAPED_UNICODE));
+        dd(json_encode($joined_form, JSON_UNESCAPED_UNICODE));
 
     }
 }

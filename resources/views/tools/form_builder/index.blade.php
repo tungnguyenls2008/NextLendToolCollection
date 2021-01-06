@@ -9,6 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+                    <form>
                     <table class="table table-responsive table-auto" style="display: inline-table">
                         <thead>
                         <tr>
@@ -28,7 +29,8 @@
                                 <td>{{$form['form_title']}}</td>
                                 <td>{{$form['version']}}</td>
                                 <td>{{$form['creator']}}</td>
-                                <td><a href="{{route('new_data',['id'=>$form['id']])}}" class="btn btn-primary">Nhập dữ liệu mới</a>
+                                <td>
+{{--                                    <a href="{{route('new_data',['id'=>$form['id']])}}" class="btn btn-primary">Nhập dữ liệu mới</a>--}}
                                     <a href="{{route('form_edit',['id'=>$form['id']])}}" class="btn btn-warning">Chỉnh sửa</a>
                                 </td>
                             </tr>
@@ -38,6 +40,7 @@
 
                     </table>
                     <p>With selected: <a type="button" class="btn btn-primary" id="join_form" >Join Form</a></p>
+                    </form>
                 </div>
             </div>
         </div>
