@@ -12,6 +12,7 @@
                     <table class="table table-responsive table-auto" style="display: inline-table">
                         <thead>
                         <tr>
+                            <th>Chọn</th>
                             <th>STT</th>
                             <th>Tên hồ sơ</th>
                             <th>Phiên bản</th>
@@ -22,6 +23,7 @@
                         <tbody>
                         @foreach($forms as $key=>$form)
                             <tr>
+                                <td><input type="checkbox" name="merge_form"></td>
                                 <td>{{$key+1}}</td>
                                 <td>{{$form['form_title']}}</td>
                                 <td>{{$form['version']}}</td>

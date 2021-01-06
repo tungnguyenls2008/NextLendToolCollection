@@ -36,6 +36,24 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $json_data = $request->json_data;
+        $json_data=json_decode($json_data);
+        foreach ($json_data as $data){
+            if (isset($data->values)){
+                $value_reformat=[];
+                foreach ($data->values as $value){
+                    $edited_value=(get_object_vars($value));
+                    $edited_value=$this->changeKey($edited_value,'label',$edited_value['value']);
+                    unset($edited_value['value']);
+                    unset($edited_value['selected']);
+                    $edited_value=($this->key_implode($edited_value,''));
+                    array_push($value_reformat,$edited_value);
+                }
+                $data->values=$value_reformat;
+            }
+        }
+        $last_product=["title"=>$request->form_title,"form"=>$json_data];
+        dd(json_encode($last_product,JSON_UNESCAPED_UNICODE));
+
         $form = new Form();
         $form->form_title = $request->form_title;
         $form->json_data = $json_data;
@@ -99,5 +117,22 @@ class FormController extends Controller
     }
     public function duplicate($id){
 
+    }
+    private function changeKey( $array, $old_key, $new_key ) {
+
+        if( ! array_key_exists( $old_key, $array ) )
+            return $array;
+
+        $keys = array_keys( $array );
+        $keys[ array_search( $old_key, $keys ) ] = $new_key;
+
+        return array_combine( $keys, $array );
+    }
+    private function key_implode(&$array, $glue) {
+        $result = "";
+        foreach ($array as $key => $value) {
+            $result .= $key . ":" . $value . $glue;
+        }
+        return substr($result, (-1 * strlen($glue)));
     }
 }
