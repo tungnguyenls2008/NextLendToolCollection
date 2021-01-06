@@ -27,12 +27,6 @@ class FormController extends Controller
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $json_data = $request->json_data;
@@ -45,24 +39,20 @@ class FormController extends Controller
                     $edited_value=$this->changeKey($edited_value,'label',$edited_value['value']);
                     unset($edited_value['value']);
                     unset($edited_value['selected']);
-                    $edited_value=($this->key_implode($edited_value,''));
                     array_push($value_reformat,$edited_value);
                 }
                 $data->values=$value_reformat;
             }
         }
-        $last_product=["title"=>$request->form_title,"form"=>$json_data];
-        dd(json_encode($last_product,JSON_UNESCAPED_UNICODE));
-
+        $array_form_info=["title"=>$request->form_title,"form"=>$json_data];
+        $json_form_info=json_encode($array_form_info,JSON_UNESCAPED_UNICODE);
         $form = new Form();
         $form->form_title = $request->form_title;
-        $form->json_data = $json_data;
+        $form->json_form_info = $json_form_info;
         $form->creator = $request->user()->name;
         $form->version = 1;
         $form->save();
-
-
-
+        //return (json_encode($last_product,JSON_UNESCAPED_UNICODE));
     }
 
 
