@@ -43,200 +43,218 @@
                 i18n: {
                     locale: 'vi-VN'
                 },
-                typeUserAttrs:{
-                    text: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    'checkbox-group': {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    date: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    file: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    number: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    radio: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    select: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    paragraph: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    textarea: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-                    autocomplete: {
-                        point: {
-                            label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
-                            type: 'select',
-                            options: {
-                                '1': '1',
-                                '2': '2',
-                                '3': '3',
-                                '4': '4',
-                                '5': '5',
-                                '6': '6',
-                                '7': '7',
-                                '8': '8',
-                                '9': '9',
-                                '10': '10'
-                            },
-                            style: 'border: 1px solid'
-                        }
-                    },
-
-                },
-
+                disabledAttrs: [
+                    'inline',
+                    'other',
+                    'subtype',
+                    'toggle',
+                    'access',
+                    'className',
+                    'description',
+                    'placeholder',
+                ],
+                controlOrder: [
+                    'text',
+                    'number',
+                    'select',
+                    'checkbox-group',
+                    'radio-group',
+                    'file',
+                ],
+                // typeUserAttrs:{
+                //     text: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     'checkbox-group': {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     date: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     file: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     number: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     radio: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     select: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     paragraph: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     textarea: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //     autocomplete: {
+                //         point: {
+                //             label: 'Điểm', // i18n support by passing and array eg. ['optionCount', {count: 3}]
+                //             type: 'select',
+                //             options: {
+                //                 '1': '1',
+                //                 '2': '2',
+                //                 '3': '3',
+                //                 '4': '4',
+                //                 '5': '5',
+                //                 '6': '6',
+                //                 '7': '7',
+                //                 '8': '8',
+                //                 '9': '9',
+                //                 '10': '10'
+                //             },
+                //             style: 'border: 1px solid'
+                //         }
+                //     },
+                //
+                // },
+                disableFields: ['button','hidden','autocomplete','date','header','paragraph','textarea'],
                 defaultFields: edit_data ,
                 onSave: function (e) {
                     //do save json to db here

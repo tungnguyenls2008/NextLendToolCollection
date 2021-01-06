@@ -14,7 +14,7 @@
                         <thead>
                         <tr>
                             <th>Chọn</th>
-                            <th>STT</th>
+                            <th>Form ID</th>
                             <th>Tên hồ sơ</th>
                             <th>Phiên bản</th>
                             <th>Người tạo</th>
@@ -25,7 +25,7 @@
                         @foreach($forms as $key=>$form)
                             <tr>
                                 <td><input type="checkbox" name="selected_forms" value="{{$form['id']}}"></td>
-                                <td>{{$key+1}}</td>
+                                <td>{{$form['id']}}</td>
                                 <td>{{$form['form_title']}}</td>
                                 <td>{{$form['version']}}</td>
                                 <td>{{$form['creator']}}</td>
@@ -67,7 +67,7 @@
                         selected_form_id: selected_form_id
                     },
                     success: function (result) {
-
+                        location.reload();
                     }
                 })
             });
