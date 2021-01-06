@@ -38,3 +38,4 @@ Route::any('/image_display/{id}',function ($id){
     return asset('uploads/'.$id);
 })->name('image_display');
 require __DIR__ . '/auth.php';
+Route::any('/join-form', [FormController::class, 'join_form'])->middleware(['auth'])->name('join-form');

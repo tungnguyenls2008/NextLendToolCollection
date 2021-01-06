@@ -23,7 +23,7 @@
                         <tbody>
                         @foreach($forms as $key=>$form)
                             <tr>
-                                <td><input type="checkbox" name="merge_form"></td>
+                                <td><input type="checkbox" name="selected_forms" value="{{$form['id']}}"></td>
                                 <td>{{$key+1}}</td>
                                 <td>{{$form['form_title']}}</td>
                                 <td>{{$form['version']}}</td>
@@ -37,8 +37,38 @@
 
 
                     </table>
+                    <p>With selected: <a type="button" class="btn btn-primary" id="join_form" >Join Form</a></p>
                 </div>
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+
+            $(document).on('click', '#join_form', function (e) {
+                var selected_form_id=[];
+                $('input:checkbox[name=selected_forms]:checked').each(function(){
+                    selected_form_id.push($(this).val())
+                });
+                console.log(selected_form_id)
+                e.preventDefault();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                jQuery.ajax({
+                    url: "{{URL::route('join-form')}}",
+                    method: 'post',
+                    data: {
+                        selected_form_id: selected_form_id
+                    },
+                    success: function (result) {
+
+                    }
+                })
+            });
+        });
+
+    </script>
 </x-app-layout>

@@ -125,4 +125,16 @@ class FormController extends Controller
         }
         return substr($result, (-1 * strlen($glue)));
     }
+    protected function join_form(Request $request){
+        $form_id_array=$request->selected_form_id;
+        $joined_form=[];
+        foreach ($form_id_array as $form_id){
+            $form=Form::find($form_id);
+            $form_data=json_decode($form->json_form_info);
+            array_push($joined_form,$form_data);
+
+        }
+        dd(json_encode($joined_form,JSON_UNESCAPED_UNICODE));
+
+    }
 }
