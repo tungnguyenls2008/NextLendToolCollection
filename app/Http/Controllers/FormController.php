@@ -30,6 +30,7 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $json_data = $request->json_data;
+        $origin_data = $request->origin_data;
         $json_data = json_decode($json_data);
         foreach ($json_data as $data) {
             if (isset($data->values)) {
@@ -48,7 +49,7 @@ class FormController extends Controller
         $json_form_info = json_encode($array_form_info, JSON_UNESCAPED_UNICODE);
         $form = new Form();
         $form->form_title = $request->form_title;
-        $form->json_data = json_encode($json_data,JSON_UNESCAPED_UNICODE);
+        $form->json_data = $origin_data;
         $form->json_form_info = $json_form_info;
         $form->creator = $request->user()->name;
         $form->version = 1;

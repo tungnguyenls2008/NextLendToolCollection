@@ -253,6 +253,7 @@
                 onSave: function (e) {
                     //do save json to db here
                     var data = form_builder.actions.getData('json')
+                    var origin_data = form_builder.actions.getData('json')
                     var form_title=$('#form_title').val();
                     data=data.replace(/true/g,"1");
                     data=data.replace(/false/g,"0");
@@ -269,7 +270,8 @@
                         method: 'post',
                         data: {
                             form_title: form_title,
-                            json_data: data
+                            json_data: data,
+                            origin_data:origin_data
                         },
                         success: function (result) {
                             alert('Lưu hồ sơ thành công!');
