@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Danh sách hồ sơ') }}
+            {{ __('Danh sách form đã tổng hợp') }}
         </h2>
     </x-slot>
 
@@ -36,7 +36,7 @@
                                     <td>{{$form->creator}}</td>
                                     <td>
                                         {{--                                    <a href="{{route('new_data',['id'=>$form['id']])}}" class="btn btn-primary">Nhập dữ liệu mới</a>--}}
-                                        <a href="{{route('form_edit',['id'=>$form->id])}}" class="btn btn-warning">Chỉnh
+                                        <a href="{{route('joined_form_edit',['id'=>$form->id])}}" class="btn btn-warning">Chỉnh
                                             sửa</a>
                                     </td>
                                 </tr>
@@ -45,14 +45,14 @@
 
 
                         </table>
-                        <div id="new_form_name_div">
-                            <table>
-                                <tr>
-                            <td><input id="new_form_name" name="new_form_name" type="text" placeholder="Tên form hồ sơ mới"></td>
-                                    <td> <a type="button" class="btn btn-primary" id="join_form">Nối form</a></td>
-                                </tr>
-                            </table>
-                        </div>
+{{--                        <div id="new_form_name_div">--}}
+{{--                            <table>--}}
+{{--                                <tr>--}}
+{{--                                    <td><input id="new_form_name" name="new_form_name" type="text" placeholder="Tên form hồ sơ mới"></td>--}}
+{{--                                    <td> <a type="button" class="btn btn-primary" id="join_form">Nối form</a></td>--}}
+{{--                                </tr>--}}
+{{--                            </table>--}}
+{{--                        </div>--}}
                         {{$forms->links()}}
                     </form>
                 </div>
@@ -69,7 +69,7 @@
                 $('input:checkbox[name=selected_forms]:checked').each(function () {
                     selected_form_id.push($(this).val())
                 });
-
+                console.log(selected_form_id)
                 e.preventDefault();
                 $.ajaxSetup({
                     headers: {

@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e93e22-8a30-4469-b6f2-1f44b7be0384" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/form-edit/assets/lang/vi-VN.lang" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/JoinedFormController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JoinedForm.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/JoinedFormFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_07_081403_create_joined_forms_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeders/JoinedFormSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/joined_forms_edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/joined_forms_index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiFormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/lang/vi-VN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/lang/vi-VN.lang" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navigation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +216,7 @@
       <workItem from="1609811157580" duration="19978000" />
       <workItem from="1609896381087" duration="64000" />
       <workItem from="1609896662164" duration="22846000" />
-      <workItem from="1609983260692" duration="3820000" />
+      <workItem from="1609983260692" duration="12189000" />
     </task>
     <servers />
   </component>
