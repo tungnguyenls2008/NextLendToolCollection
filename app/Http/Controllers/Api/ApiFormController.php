@@ -27,7 +27,7 @@ class ApiFormController extends BaseController
     {
 
         $forms = Form::all();
-        return json_encode($forms);
+        return $this->sendResponse($forms, 'All forms retrieved successfully.');
     }
 
 
@@ -43,20 +43,13 @@ class ApiFormController extends BaseController
 
     {
         $form = Form::find($id);
-        $json_form_info=(json_decode($form->json_form_info));
-
-
         if (is_null($form)) {
-
             return $this->sendError('Form not found.');
-
         }
-
-
-
-        return $this->sendResponse($json_form_info, 'Form retrieved successfully.');
-
-
+        else{
+            $json_form_info=(json_decode($form->json_form_info));
+            return $this->sendResponse($json_form_info, 'Form retrieved successfully.');
+        }
 
     }
 

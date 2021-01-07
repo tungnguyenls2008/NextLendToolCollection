@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="21e93e22-8a30-4469-b6f2-1f44b7be0384" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/form-edit/assets/lang/vi-VN.lang" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FormController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tools/form_builder/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tools/form_builder/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiFormController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiFormController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/lang/vi-VN.lang" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/lang/vi-VN.lang" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,18 +171,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/form_data" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/form-edit/assets/lang" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/form-edit/assets/lang" />
       <recent name="$PROJECT_DIR$/resources/views/pages/form_data" />
       <recent name="$PROJECT_DIR$/database/seeders" />
       <recent name="$PROJECT_DIR$/public/assets/images" />
       <recent name="$PROJECT_DIR$/public" />
-      <recent name="$PROJECT_DIR$/resources/views/tools/form_builder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
@@ -205,7 +207,8 @@
       <workItem from="1609723955434" duration="23661000" />
       <workItem from="1609811157580" duration="19978000" />
       <workItem from="1609896381087" duration="64000" />
-      <workItem from="1609896662164" duration="22804000" />
+      <workItem from="1609896662164" duration="22846000" />
+      <workItem from="1609983260692" duration="3820000" />
     </task>
     <servers />
   </component>

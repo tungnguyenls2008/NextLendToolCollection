@@ -21,7 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 Route::middleware('auth:api')->group( function () {
 
-    Route::resource('forms', ApiFormController::class);
+    //Route::resource('forms', ApiFormController::class);
+    Route::get('forms/{id}', [ApiFormController::class,'show']);
 
 });
 Route::post('register', [RegisterController::class, 'register']);
